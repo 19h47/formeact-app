@@ -1,0 +1,55 @@
+/**
+ * Hero
+ */
+.Hero {
+	@include padding( top #{ $base-line-height * 4 }px bottom #{ $base-line-height * 3.5 }px );
+
+	// .Hero__title
+	&__title {
+		@include margin( top 0 );
+		@include margin( bottom #{ $base-line-height }px );
+
+		color: the_color( blue, very-dark-01 );
+	}
+
+	// .Hero__description
+	&__description {
+		@extend %font-family-body;
+		@include margin( bottom #{ $base-line-height * 3 }px );
+
+		font-size: $base-font-size-px * power( $scale-factor, 2 );
+		line-height: #{ $base-line-height * 2 }px;
+	}
+
+	// .Hero__horizontal-line
+	&__horizontal-line {
+        @include size( 100%, 2px );
+		@extend %margin-0;
+
+        background-color: the_color( gray, light );
+        border: none;
+    }
+
+	// .Hero__link
+	&__link {
+		@extend %font-weight-bold;
+
+		color: the_color( blue, very-dark-02 );
+	}
+
+	// .Hero__url
+	&__url {
+		@include size( #{ $base-line-height * 2 }px );
+		@extend .d-flex, .align-items-center, .justify-content-center;
+
+		border: 2px solid the_color( gray, light );
+		border-radius: #{ $base-line-height }px;
+
+		img {
+			@extend %margin-bottom-0;
+			@include size( #{ $base-line-height / 2 }px, 9px );
+
+			fill: the_color( blue, very-dark-02 );
+		}
+	}
+}

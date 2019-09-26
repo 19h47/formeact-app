@@ -1,0 +1,31 @@
+/**
+ * Section
+ *
+ */
+.Section {
+	@include padding( top #{ $base-line-height * 4 }px bottom #{ $base-line-height * 4 }px );
+
+	// .Section__title
+	&__title {
+		@extend %font-weight-regular, %margin-top-0, %font-family-body;
+	}
+
+
+	// .Section__illustration
+	&__illustration {
+		@extend .d-inline-block;
+		@extend %vertical-align-middle;
+		@include margin( right auto bottom 0 left auto );
+		@include size( 100% );
+
+		max-height: #{ $base-line-height * 9 }px;
+		object-fit: contain;
+		object-position: center;
+	}
+
+	&__items {
+		@include margin( bottom -2px );
+
+		border-bottom: 2px solid the_color( gray, light );
+	}
+}

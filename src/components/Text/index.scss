@@ -1,0 +1,26 @@
+/**
+ * Text
+ *
+ */
+.Text {
+	$this: &;
+
+	&.background-color-blue-very-dark-01 {
+		#{ $this }__content {
+			color: the_color( gray, light );
+		}
+
+		#{ $this }__title {
+			@extend %font-family-body, %font-weight-bold;
+
+			font-size: $base-font-size-px * power( $scale-factor, 1 );
+			line-height: #{ $base-line-height }px;
+
+			color: the_color( white );
+		}
+	}
+
+	&__content {
+		white-space: pre-line;
+	}
+}

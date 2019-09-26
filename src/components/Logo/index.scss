@@ -1,0 +1,11 @@
+/**
+ * Logo
+ */
+.Logo {
+    @extend .d-inline-block;
+
+    img {
+        @extend .d-inline-block;
+        @extend %vertical-align-middle;
+    }
+}

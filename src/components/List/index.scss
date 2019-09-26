@@ -1,0 +1,74 @@
+/**
+ * List
+ *
+ */
+.List {
+	$this: &;
+
+	.Section__illustration {
+		@include margin( top auto );
+	}
+
+	&.background-color-white {
+		.Section__title {
+			color: the_color( blue, very-dark-01 );
+		}
+
+		#{ $this }__item {
+			color: the_color( blue, very-dark-01 );
+		}
+	}
+
+	&.background-color-blue-very-soft {
+		#{ $this }__item {
+			color: the_color( white );
+		}
+	}
+
+	&__item {
+		@extend .d-flex;
+		@extend %margin-bottom-0;
+		@include margin( top -1px );
+
+		border-top: 1px solid the_color( gray, light );
+
+		&__column {
+			@extend .d-flex;
+
+			img {
+				@include size( #{ $base-line-height }px, #{ $base-line-height * 2 }px );
+				@extend %margin-0;
+
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+
+		&__column:first-child {
+			@include padding( right $grid-gutter-width );
+
+			width: percentage( 216 / 727 );
+		}
+
+		&__column:last-child {
+			@extend .flex-column;
+			width: percentage( 512 / 727 );
+		}
+
+		&__link {
+			line-height: #{ $base-line-height * 2 }px;
+		}
+
+		&__title {
+			@extend %font-weight-bold;
+
+			line-height: #{ $base-line-height * 2 }px;
+		}
+
+		&__content {}
+	}
+
+	&__items {
+		@extend %list-style-type-none, %margin-top-0, %margin-left-0;
+	}
+}

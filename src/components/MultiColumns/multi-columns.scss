@@ -1,0 +1,43 @@
+/**
+ * Multi-columns
+ *
+ */
+.Multi-columns {
+	$this: &;
+
+	&.background-color-blue-very-soft {
+		color: the_color( white );
+	}
+
+	&.background-color-white {
+		.Section__title {
+			color: the_color( blue, very-dark-01 );
+		}
+
+		#{ $this }__column {
+			color: the_color( blue, very-dark-01 );
+		}
+
+		#{ $this }__title {
+			color: the_color( blue, very-dark-02 );
+		}
+	}
+
+	// .Multi-columns__title
+	&__title {
+		@extend %margin-top-0, %margin-bottom-3, %font-family-body;
+	}
+
+	&__column {
+		height: 100%;
+		@include margin( bottom -2px );
+
+		p {
+			white-space: pre-line;
+		}
+
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+		border-color: the_color( gray, light );
+	}
+}

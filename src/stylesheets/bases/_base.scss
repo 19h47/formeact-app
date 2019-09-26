@@ -1,0 +1,50 @@
+/**
+ * Base
+ */
+:root {
+	--blue-very-dark-01: #{ the_color( blue, very-dark-01 ) };
+	--blue-very-dark-02: #{ the_color( blue, very-dark-02 ) };
+	--white: #{ the_color( white ) };
+	--gray-light: #{ the_color( gray, light ) };
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@extend %position-relative;
+
+	font-size: $base-font-size-px;
+	line-height: #{ $base-line-height }px;
+	font-family: map-get( map-get( $font, families ), body );
+
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+
+	text-rendering: optimizeLegibility;
+
+	@extend %font-weight-regular;
+}
+
+a,
+button {
+	cursor: pointer;
+	outline: none;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+p {
+	@include margin (
+		top 0
+		bottom #{ $base-line-height }px
+	);
+}
+
+strong {
+	@extend %font-weight-bold;
+}

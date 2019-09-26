@@ -1,0 +1,8 @@
+/**
+ * Site: Header
+ */
+.Site-header {
+    @include padding( top #{ $base-line-height * 3 }px );
+
+    color: the_color( blue, very-dark-01 );
+}

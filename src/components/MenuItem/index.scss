@@ -1,0 +1,23 @@
+/**
+ * Menu: item
+ *
+ * @uses .Menu-item
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+ */
+.Menu-item {
+	@include margin( bottom 0 );
+
+	height: #{ $base-line-height }px;
+
+    // .Menu-item__link
+    &__link {
+        @extend .d-inline-block;
+
+		line-height: #{ $base-line-height }px;
+
+        // .Menu-item__link.is-active
+        &.is-active {
+
+        }
+    }
+}

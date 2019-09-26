@@ -1,0 +1,37 @@
+/**
+ * Tweets
+ *
+ */
+.Tweets {
+	@extend %overflow-hidden;
+
+	background-color: the_color( blue, very-dark-01 );
+
+	.flickity-viewport {
+		width: 100%;
+		overflow: visible;
+	}
+
+	// .Tweets__link
+	&__link {
+		line-height: #{ $base-line-height }px;
+	}
+
+	// .Tweets__items
+	&__items {
+		@extend %list-style-type-none;
+		@extend %margin-bottom-0;
+	}
+
+	&__item {
+		@extend %margin-0;
+	}
+
+	&__horizontal-line {
+		@include margin( top #{ ( $base-line-height / 2 ) - 1 }px bottom #{ ( $base-line-height / 2 ) - 1 }px );
+		@include size( 100%, 2px );
+
+        background-color: the_color( gray, light );
+        border: none;
+	}
+}

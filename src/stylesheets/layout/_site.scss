@@ -1,0 +1,49 @@
+/**
+ * Site
+ *
+ * @uses .Site-{ property }
+ */
+.Site {
+
+	/**
+	 * Site container
+	 *
+	 * The fluid container of the grid
+	 *
+	 * @uses .Site-container
+	 */
+	&-container {
+		@extend %position-relative;
+		@include margin( top 0 right auto bottom 0 left auto );
+		@include padding(
+			right $grid-outer-gutter-width
+			left $grid-outer-gutter-width
+		);
+
+		max-width: $container-width;
+	}
+
+
+	/**
+	 * Main
+	 *
+	 * @uses .Site-main
+	 */
+	&-main {
+		@extend %position-relative;
+
+		z-index: 1;
+	}
+
+
+	/**
+	 * Aside
+	 *
+	 * @uses .Site-aside
+	 */
+	&-aside {
+		@include fixed( top 0 right 0 bottom 0 left 0 );
+
+		z-index: 10;
+	}
+}

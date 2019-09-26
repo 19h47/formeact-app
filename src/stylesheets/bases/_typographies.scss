@@ -1,0 +1,82 @@
+/**
+ * Basic typography style for copy text
+ */
+
+// @include reset-selection( get_color( black ), get_color( white ) );
+
+h1,
+.h1 {
+	@extend %font-weight-semibold, %font-family-title;
+
+	@include margin(
+		top #{ $base-line-height }px
+		bottom #{ $base-line-height * 2 }px
+	);
+
+	@include media-breakpoint-up( 'md' ) {
+		font-size: $base-font-size-px * power( $scale-factor, 3 );
+		line-height: #{ $base-line-height * 3 }px;
+	}
+}
+
+h2,
+.h2 {
+	// font-size: $base-font-size-px * power( $scale-factor, 2 );
+	// line-height: #{ $base-line-height * 2 }px;
+
+	@extend %font-weight-bold, %font-family-title;
+
+	@include margin(
+		top #{ $base-line-height }px
+		bottom #{ $base-line-height }px
+	);
+
+	@include media-breakpoint-up( 'md' ) {
+		font-size: $base-font-size-px * power( $scale-factor, 2 );
+		line-height: #{ $base-line-height * 2 }px;
+	}
+}
+
+h3,
+.h3 {
+	@extend %font-weight-bold, %font-family-title;
+
+	font-size: $base-font-size-px * power( $scale-factor, 1 );
+	line-height: #{ $base-line-height }px;
+
+	@include margin(
+		top #{ $base-line-height }px
+		bottom 0
+	);
+}
+
+h4,
+.h4 {
+	@extend %font-weight-regular, %font-family-title;
+
+	font-size: $base-font-size-px * power( $scale-factor, 1 );
+	line-height: #{ $base-line-height }px;
+
+	@include margin(
+		top #{ $base-line-height }px
+		bottom 0
+	);
+}
+
+h5,
+.h5 {
+	line-height: #{ $base-line-height }px;
+}
+
+h6,
+.h6 {
+	line-height: $grid-gutter-width;
+}
+
+.dh1 {}
+
+.dh2 {}
+
+.dh3 {}
+
+.dh4 {}

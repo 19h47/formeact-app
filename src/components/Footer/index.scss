@@ -1,0 +1,39 @@
+/**
+ * Site: footer
+ *
+ */
+.Site-footer {
+    @include padding(
+		top #{ $base-line-height * 2 }px
+		bottom #{ $base-line-height * 2.5 }px
+	);
+
+    background-color: the_color( blue, very-dark-02 );
+    color: var( --white );
+
+    // .Site-footer__horizontal-line
+    &__horizontal-line {
+        @include margin(
+			top #{ ( $base-line-height * 2 ) - 1 }px
+			bottom #{ ( $base-line-height * 1.5 ) - 1 }px
+		);
+        @include size( 100%, 2px );
+
+        background-color: the_color( white );
+        border: none;
+    }
+
+    // .Site-footer__copyright
+    &__copyright {
+        color: var( --gray-light );
+		font: {
+			size: 18px;
+		}
+		line-height: #{ $base-line-height }px;
+
+        a {
+            @extend %font-weight-bold;
+            color: var( --white );
+        }
+    }
+}

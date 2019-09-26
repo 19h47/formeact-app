@@ -1,0 +1,37 @@
+/**
+ * Socials
+ *
+ * @uses .Socials
+ */
+.Socials {
+    @extend %list-style-type-none;
+    @extend .d-flex;
+	@include margin( bottom 0 );
+
+    // height: $grid-gutter-width * 2;
+
+	// .Socials__item
+    &__item {
+        @include margin( right $grid-gutter-width / 4 bottom 0 left $grid-gutter-width / 4 );
+
+		&:last-child { @include margin( right 0 ); }
+		&:first-child { @include margin( left 0 ); }
+
+        a {
+            @extend .d-flex, .align-items-center, .justify-content-center;
+            @include size( #{ $base-line-height * 2 }px );
+
+            border: {
+                color: the_color( gray, light );
+                radius: #{ $base-line-height }px;
+                style: solid;
+                width: 2px;
+            }
+        }
+
+        img {
+            @include size( #{ $base-line-height / 2 }px );
+            @extend .d-block;
+        }
+    }
+}

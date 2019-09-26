@@ -1,0 +1,30 @@
+/**
+ * Tweet
+ *
+ */
+.Tweet {
+	&__featured-image {
+		@extend %position-relative;
+		height: #{ $base-line-height * 15 }px;
+
+		img {
+			@extend .d-inline-block;
+			@extend %vertical-align-middle;
+			@include size( 100% );
+
+			object-fit: cover;
+			object-position: center;
+
+			filter: url( '#gradient-map' );
+		}
+	}
+
+	// .Tweet__title
+	&__title {
+		@extend %margin-top-2;
+
+		margin-bottom: #{ $base-line-height / 2 }px!important;
+
+		color: the_color( white );
+	}
+}
