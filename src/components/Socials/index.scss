@@ -6,9 +6,11 @@
 .Socials {
     @extend %list-style-type-none;
     @extend .d-flex;
-	@include margin( top #{ $base-line-height / 2 }px bottom 0 );
+	@include margin( bottom 0 );
 
-    // height: $grid-gutter-width * 2;
+    @at-root .Site-header & {
+		@include margin( top #{ $base-line-height / 2 }px );
+	}
 
 	// .Socials__item
     &__item {
