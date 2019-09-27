@@ -6,8 +6,6 @@
 	@include margin( top #{ $base-line-height * -6.5 }px );
 	@extend %position-relative;
 
-	transition: background-color 0.15s map-get( $easings, ease-in-out );
-
 	@at-root .Front-page & {
 		background-color: the_color( blue, bright );
 	}
