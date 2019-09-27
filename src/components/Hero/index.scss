@@ -2,12 +2,15 @@
  * Hero
  */
 .Hero {
-	@include margin( top #{ $base-line-height * -6.5 }px );
 	@include padding( top #{ $base-line-height * 10.5 }px bottom #{ $base-line-height * 3.5 }px );
-
+	@include margin( top #{ $base-line-height * -6.5 }px );
 	@extend %position-relative;
 
-	background-color: the_color( blue, bright );
+	transition: background-color 0.3s map-get( $easings, ease-in-out );
+
+	@at-root .Front-page & {
+		background-color: the_color( blue, bright );
+	}
 
 	&__wave {
 		@include absolute( top 0 right 0 bottom 0 left 0 );
