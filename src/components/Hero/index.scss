@@ -4,12 +4,39 @@
 .Hero {
 	@include padding( top #{ $base-line-height * 4 }px bottom #{ $base-line-height * 3.5 }px );
 
+	@at-root .Front-page & {
+		@extend %position-relative;
+		@include margin( top #{ $base-line-height * -6.5 }px );
+		@include padding( top #{ $base-line-height * 10.5 }px );
+
+		background-color: the_color( blue, bright );
+	}
+
+	&__wave {
+		@include absolute( top 0 right 0 bottom 0 left 0 );
+
+		img {
+			@include absolute( top 0 right 0 bottom 0 );
+			@include margin( right $grid-gutter-width / 2 );
+			@include size( auto, 100% );
+
+			object-fit: cover;
+			object-position: right center;
+		}
+
+		&--orange {}
+	}
+
 	// .Hero__title
 	&__title {
 		@include margin( top 0 );
 		@include margin( bottom #{ $base-line-height }px );
 
 		color: the_color( blue, very-dark-01 );
+
+		@at-root .Front-page & {
+			color: the_color( white );
+		}
 	}
 
 	// .Hero__description
@@ -19,6 +46,14 @@
 
 		font-size: $base-font-size-px * power( $scale-factor, 2 );
 		line-height: #{ $base-line-height * 2 }px;
+
+		@at-root .Front-page & {
+			@include margin( bottom #{ $base-line-height * 2 }px );
+
+			color: the_color( gray, light );
+			font-size: $base-font-size-px * power( $scale-factor, 1 );
+			line-height: #{ $base-line-height * 1 }px;
+		}
 	}
 
 	// .Hero__horizontal-line
@@ -28,6 +63,10 @@
 
         background-color: the_color( gray, light );
         border: none;
+
+		@at-root .Front-page & {
+			background-color: the_color( gray, very-light );
+		}
     }
 
 	// .Hero__link
@@ -35,6 +74,10 @@
 		@extend %font-weight-bold;
 
 		color: the_color( blue, very-dark-02 );
+
+		@at-root .Front-page & {
+			color: the_color( white );
+		}
 	}
 
 	// .Hero__url

@@ -6,11 +6,22 @@ import Seo from '@components/Seo';
 
 const NotFoundPage = ({ location }) => (
 	<Layout location={{ location }}>
-		<Seo title="404: Not found" />
-		<h1>NOT FOUND</h1>
-		<p>You just hit a route that doesn't exist... the sadness.</p>
+		<section class="Hero">
+			<div class="Site-container">
+				<div class="row">
+					<div class="col-12">
+						<h1 class="Hero__title">404</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-7">
+						<div class="Hero__description">Vous venez d'atteindre une page qui n'existe pas... la tristesse.</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<Seo title="404" />
 	</Layout>
 );
-
 
 export default NotFoundPage;

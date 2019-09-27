@@ -7,9 +7,9 @@ import Guid from '@components/Guid';
 
 import '../stylesheets/styles.scss';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, context }) => (
 	<>
-		<Header />
+		<Header context={context}/>
 		<div className="content">{children}</div>
 		<Footer />
 		<Guid />

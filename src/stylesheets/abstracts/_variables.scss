@@ -20,8 +20,13 @@ $color-variations: (
 		pure: #ff3200,
 	),
 
+	orange: (
+		bright: #ee662f,
+	),
+
 	blue: (
 		pure: #0000ff,
+		bright: #336ffa,
 		very-dark-01: #110e66,
 		very-dark-02: #090733,
 		very-soft: #7998d9,
@@ -29,6 +34,7 @@ $color-variations: (
 
 	gray: (
 		light: #cccccc,
+		very-light: #f6f6f6,
 	),
 
 	/**

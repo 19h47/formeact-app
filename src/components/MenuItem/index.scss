@@ -14,10 +14,13 @@
         @extend .d-inline-block;
 
 		line-height: #{ $base-line-height }px;
+		transition: color 0.3s map-get( $easings, ease-in-out );
 
         // .Menu-item__link.is-active
-        &.is-active {
+        &.is-active {}
 
-        }
+		@at-root .Front-page .Site-header & {
+			color: the_color( white );
+		}
     }
 }

@@ -1,7 +1,7 @@
-const {
-	PageTemplateFragment
-} = require(`../src/templates/page/data.js`)
-const pageTemplate = require.resolve(`../src/templates/page/Page.js`)
+const { PageTemplateFragment } = require(`../src/templates/page/data.js`);
+
+const pageTemplate = require.resolve(`../src/templates/page/Page.js`);
+const frontPageTemplate = require.resolve(`../src/templates/page/FrontPage.js`);
 
 const GET_PAGES = `
   # Define our query variables
@@ -147,14 +147,13 @@ module.exports = async ({
 		 * Map over the allPages array to create the
 		 * single pages
 		 */
-		allPages &&
-			allPages.map(page => {
-				console.log(`create pages: ${page.uri}`)
-				createPage({
-					path: `/${page.uri}/`,
-					component: pageTemplate,
-					context: page,
-				})
+		allPages && allPages.map(page => {
+			console.log(`create pages: ${page.uri}`)
+			createPage({
+				path: page.uri === 'accueil' ? '/' : `/${page.uri}/`,
+				component: page.uri === 'accueil' ? frontPageTemplate : pageTemplate,
+				context: page,
 			})
+		})
 	})
 }

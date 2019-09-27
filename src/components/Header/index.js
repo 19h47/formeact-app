@@ -17,7 +17,7 @@ const SITE_TITLE = graphql`
 	}
 `
 
-const Header = props => (
+const Header = ({ context }) => (
 	<StaticQuery
 		query={SITE_TITLE}
 		render={data => {
@@ -26,13 +26,13 @@ const Header = props => (
 					<div className="Site-container">
 						<div className="row">
 							<div className="col-12 col-md-3">
-								<Logo color="blue" />
+								<Logo color={ context === 'Front-page' ? 'white' : 'blue' } />
 							</div>
 							<div className="col-12 col-md-6">
 								<Menu />
 							</div>
 							<div className="col-12 col-md-3 d-flex justify-content-end align-items-center">
-								<Socials color="blue" />
+								<Socials color={ context === 'Front-page' ? 'white': 'blue' } />
 							</div>
 						</div>
 					</div>
