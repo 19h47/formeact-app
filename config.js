@@ -1,3 +1,3 @@
 module.exports = {
-	wordPressUrl: 'http://api.formeact.fr'
+	wordPressUrl: 'http://www.api.formeact.fr'
 }
