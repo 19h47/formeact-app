@@ -2,13 +2,9 @@
  * Site: Header
  */
 .Site-header {
+	@extend %position-relative;
     @include padding( top #{ $base-line-height * 4 }px );
 
     color: the_color( blue, very-dark-01 );
-
-	@at-root .Front-page & {
-		@extend %position-relative;
-
-		z-index: 1;
-	}
+	z-index: 1;
 }
