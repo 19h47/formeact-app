@@ -28,4 +28,33 @@
 
 		border-bottom: 2px solid the_color( gray, light );
 	}
+
+
+	// .Section__link
+	&__link {
+		@extend %font-weight-bold;
+
+		color: the_color( blue, very-dark-02 );
+
+		@at-root .Front-page .Hero & {
+			color: the_color( white );
+		}
+	}
+
+
+	// .Section__url
+	&__url {
+		@include size( #{ $base-line-height * 2 }px );
+		@extend .d-flex, .align-items-center, .justify-content-center;
+
+		border: 2px solid the_color( gray, light );
+		border-radius: #{ $base-line-height }px;
+
+		img {
+			@extend %margin-bottom-0;
+			@include size( #{ $base-line-height / 2 }px, 9px );
+
+			fill: the_color( blue, very-dark-02 );
+		}
+	}
 }

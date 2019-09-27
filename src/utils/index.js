@@ -1,6 +1,6 @@
 import config from '../../config';
 
-export const createLocalLink = url => {
+export default function createLocalLink(url) {
 	if (null === url) {
 		return null;
 	}

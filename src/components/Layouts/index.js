@@ -5,6 +5,7 @@ import Tweets from '@components/Tweets';
 import List from '@components/List';
 import MultiColumns from '@components/MultiColumns';
 import Text from '@components/Text';
+import TextImage from '@components/TextImage';
 
 
 const Layouts = ({ data }) => {
@@ -25,6 +26,10 @@ const Layouts = ({ data }) => {
 
 		if ('Text' === layout.name) {
 			layouts.push(<Text data={layout} key={index} />)
+		}
+
+		if ('TextImage' === layout.name) {
+			layouts.push(<TextImage data={layout} key={index} />)
 		}
 
 		return layouts;

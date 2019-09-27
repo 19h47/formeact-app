@@ -1,19 +1,26 @@
 import React from 'react';
 
-import { title, description } from '@components/Hero/utils';
-import { illustration, link, url } from '@components/utils';
+import { illustration, url, link } from '@components/utils';
 
-const Hero = ({ data }) => (
-	<section className="Hero">
+const TextImage = ({ data }) => (
+	<section className={ `Text-image Section background-color-${data.background}` }>
+	{console.log(data)}
 		<div className="Site-container">
-			{null !== data.title ? title(data.title) : ''}
 			<div className="row">
-				{null !== data.description ? description(data.description) : ''}
+				<div className="col-12 col-md-7">
+					<div className="Text-image__items">
+						<p
+							className="Text-image__content"
+							dangerouslySetInnerHTML={{ __html: data.content }}
+						/>
+						<p className="Text-image__title">{data.title}</p>
+					</div>
+				</div>
 				{null !== data.illustration ? illustration(data.illustration) : ''}
 			</div>
 			<footer className="row d-flex align-items-center">
 				<div className="col-7 d-flex align-items-center">
-					<hr className="Hero__horizontal-line" />
+					<hr className="Text-image__horizontal-line" />
 				</div>
 				<div className="col-3 offset-1 d-flex justify-content-center">
 					{null !== data.link && undefined !== data.link ? link(data.link) : ''}
@@ -26,4 +33,4 @@ const Hero = ({ data }) => (
 	</section>
 );
 
-export default Hero;
+export default TextImage;

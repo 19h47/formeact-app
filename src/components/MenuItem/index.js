@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { createLocalLink } from '../../utils';
+import createLocalLink from '../../utils';
 
 
 const MenuItem = ({ item }) => {

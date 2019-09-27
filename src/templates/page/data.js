@@ -46,6 +46,18 @@ const PageTemplateFragment = `fragment PageTemplateFragment on WPGraphQL_Page {
 				content
 				background
 			}
+			... on WPGraphQL_Page_Fields_Layouts_TextImage {
+				name
+				title
+				content
+				background
+				illustration
+				link {
+					target
+					title
+					url
+				}
+			}
 		}
 	}
 }`;

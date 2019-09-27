@@ -5,8 +5,7 @@ import React from 'react';
 import Layout from '@components/Layout';
 import Seo from '@components/Seo';
 import Layouts from '@components/Layouts';
-import { illustration, link, url } from '@components/Hero/utils';
-
+import { illustration, link, url } from '@components/utils';
 
 const Hero = ({ data }) => {
 	const waveOrange = require('../../img/svg/wave-orange.svg');
