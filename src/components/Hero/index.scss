@@ -6,8 +6,12 @@
 	@include margin( top #{ $base-line-height * -6.5 }px );
 	@extend %position-relative;
 
+	background-color: transparent;
+	color: the_color( blue, very-dark-02 );
+
 	@at-root .Front-page & {
 		background-color: the_color( blue, bright );
+		color: the_color( white );
 	}
 
 	&__wave {

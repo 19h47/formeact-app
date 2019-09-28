@@ -28,6 +28,7 @@ const GET_PAGES = `
           }
           nodes {
               uri
+			  pageOnFront
 
               # This is the fragment used for the pages Template
               ...PageTemplateFragment
@@ -108,8 +109,7 @@ module.exports = async ({
 			/**
 			 * Map over the pages for later creation
 			 */
-			nodes &&
-				nodes.map(pages => {
+			nodes && nodes.map(pages => {
 					allPages.push(pages)
 				})
 
@@ -148,10 +148,11 @@ module.exports = async ({
 		 * single pages
 		 */
 		allPages && allPages.map(page => {
-			console.log(`create pages: ${page.uri}`)
+			console.log(`create pages: ${page.uri}, ${page.pageOnFront ? `this is the page on front` : ''}`);
+
 			createPage({
-				path: page.uri === 'accueil' ? '/' : `/${page.uri}/`,
-				component: page.uri === 'accueil' ? frontPageTemplate : pageTemplate,
+				path: page.pageOnFront ? '/' : `/${page.uri}/`,
+				component: page.pageOnFront ? frontPageTemplate : pageTemplate,
 				context: page,
 			})
 		})

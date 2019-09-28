@@ -3,7 +3,6 @@ import {
 	graphql
 } from "gatsby"
 import Layout from "../../components/Layout"
-import PostEntryTitle from "../../components/PostEntryTitle"
 
 const SinglePost = props => {
 	const { data: { wpgraphql: { post } } } = props;
@@ -17,7 +16,6 @@ const SinglePost = props => {
 				className ={`post-${postId} post type-post status-publish format-standard hentry category-react tag-accessibility tag-gatsby entry`}
 			>
 				<header className="entry-header">
-					<PostEntryTitle post={post} location="single" titleClass="entry-title" />
 					<div className = "entry-meta" / >
 					{ /* .meta-info */ }
 				</header>

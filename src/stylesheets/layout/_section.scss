@@ -34,11 +34,7 @@
 	&__link {
 		@extend %font-weight-bold;
 
-		color: the_color( blue, very-dark-02 );
-
-		@at-root .Front-page .Hero & {
-			color: the_color( white );
-		}
+		color: currentColor;
 	}
 
 
@@ -56,5 +52,13 @@
 
 			fill: the_color( blue, very-dark-02 );
 		}
+	}
+
+	&__horizontal-line {
+		@include size( 100%, 2px );
+		@extend %margin-0;
+
+		background-color: the_color( gray, light );
+		border: none;
 	}
 }

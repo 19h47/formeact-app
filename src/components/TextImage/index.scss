@@ -22,12 +22,4 @@
 		line-height: #{ $base-line-height * 2 }px;
 		white-space: pre-line;
 	}
-
-	&__horizontal-line {
-        @include size( 100%, 2px );
-		@extend %margin-0;
-
-        background-color: the_color( gray, light );
-        border: none;
-    }
 }

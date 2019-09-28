@@ -6,7 +6,7 @@ import List from '@components/List';
 import MultiColumns from '@components/MultiColumns';
 import Text from '@components/Text';
 import TextImage from '@components/TextImage';
-
+import Posts from '@components/Posts';
 
 const Layouts = ({ data }) => {
 	const layouts = [];
@@ -25,11 +25,15 @@ const Layouts = ({ data }) => {
 		}
 
 		if ('Text' === layout.name) {
-			layouts.push(<Text data={layout} key={index} />)
+			layouts.push(<Text data={layout} key={index} />);
 		}
 
 		if ('TextImage' === layout.name) {
-			layouts.push(<TextImage data={layout} key={index} />)
+			layouts.push(<TextImage data={layout} key={index} />);
+		}
+
+		if ('Posts' === layout.name) {
+			layouts.push(<Posts data={layout} key={index} />);
 		}
 
 		return layouts;

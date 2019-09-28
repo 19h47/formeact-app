@@ -56,7 +56,10 @@
 		}
 
 		&__link {
+			@include margin( bottom 0 );
+
 			line-height: #{ $base-line-height * 2 }px;
+		    white-space: nowrap;
 		}
 
 		&__title {
