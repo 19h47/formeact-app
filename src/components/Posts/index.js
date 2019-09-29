@@ -1,11 +1,11 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import { link, url } from '@components/utils';
-import createLocalLink from '../../utils';
-import moment from 'moment/moment';
 
-const POSTS = graphql`
-	query POSTS {
+import TeasePost from '@components/TeasePost';
+
+const RECENT_POSTS = graphql`
+	query RECENT_POSTS {
 		wpgraphql {
 			posts(first: 3) {
 				nodes {
@@ -33,28 +33,11 @@ const Posts = ({ data }) => {
 						<div className="margin-bottom-5">{content}</div>
 
 						<StaticQuery
-							query={POSTS}
+							query={RECENT_POSTS}
 							render={data => {
-								const chevron = require(`../../img/svg/chevron-right-white.svg`);
-
 								const posts = data.wpgraphql.posts.nodes.map((post, index) =>
 									<li className="List__item" key={index}>
-										<Link className="List__item__column" to={createLocalLink(post.link)}>
-											<img src={chevron} alt=""/>
-											<p className="List__item__link">{moment(post.date).locale('fr').format('D MMMM YYYY')}</p>
-										</Link>
-										<div className="List__item__column">
-											<div className="List__item__content">
-												<Link
-													className="List__item__content d-block"
-													style={{
-														marginBottom: '14.5px',
-														marginTop: '14.5px'
-													}}
-													to={createLocalLink(post.link)}
-													dangerouslySetInnerHTML={{ __html: post.title }} />
-											</div>
-										</div>
+										<TeasePost post={post}/>
 									</li>
 								);
 

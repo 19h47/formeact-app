@@ -19,8 +19,8 @@ const PostTemplateFragment = `
 	}
 `
 
-const BlogPreviewFragment = `
-	fragment BlogPreviewFragment on WPGraphQL_Post {
+const TeasePostFragment = `
+	fragment TeasePostFragment on WPGraphQL_Post {
 		id
 		postId
 		title
@@ -32,4 +32,4 @@ const BlogPreviewFragment = `
 `
 
 module.exports.PostTemplateFragment = PostTemplateFragment;
-module.exports.BlogPreviewFragment = BlogPreviewFragment;
+module.exports.TeasePostFragment = TeasePostFragment;

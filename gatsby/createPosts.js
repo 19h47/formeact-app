@@ -1,49 +1,46 @@
-const {
-	PostTemplateFragment,
-	BlogPreviewFragment,
-} = require("../src/templates/posts/data.js");
+const { PostTemplateFragment, TeasePostFragment } = require('../src/templates/posts/data.js');
 
-const postTemplate = require.resolve(`../src/templates/posts/single.js`)
-const blogTemplate = require.resolve(`../src/templates/posts/archive.js`)
+const postTemplate = require.resolve('../src/templates/posts/single.js');
+const blogTemplate = require.resolve('../src/templates/posts/archive.js');
 
 const GET_POSTS = `
-# Define our query variables
-query GET_POSTS( $first: Int $after: String ) {
-  wpgraphql {
-    # Ask for posts
-    posts(
-        # Ask for the first XX number of posts
-        first: $first
+	# Define our query variables
+	query GET_POSTS( $first: Int $after: String ) {
+  		wpgraphql {
+    		# Ask for posts
+    		posts(
+        		# Ask for the first XX number of posts
+        		first: $first
 
-        # A Cursor to where in the dataset our query should start
-        # and get items _after_ that point
-        after:$after
-    ) {
-        # In response, we'll want pageInfo so we know if we need
-        # to fetch more posts or not.
-        pageInfo {
-            # If true, we need to ask for more data.
-            hasNextPage
+        		# A Cursor to where in the dataset our query should start
+        		# and get items _after_ that point
+        		after:$after
+    		) {
+        		# In response, we'll want pageInfo so we know if we need
+        		# to fetch more posts or not.
+        		pageInfo {
+            		# If true, we need to ask for more data.
+            		hasNextPage
 
-            # This cursor will be used for the value for $after
-            # if we need to ask for more data
-            endCursor
-        }
-        nodes {
-            uri
+            		# This cursor will be used for the value for $after
+            		# if we need to ask for more data
+            		endCursor
+        		}
+        		nodes {
+            		uri
 
-            # This is the fragment used for the Post Template
-            ...PostTemplateFragment
+            		# This is the fragment used for the Post Template
+            		...PostTemplateFragment
 
-            #This is the fragment used for the blog preview on archive pages
-            ...BlogPreviewFragment
-        }
-    }
-  }
-}
-# Here we make use of the imported fragments which are referenced above
-${PostTemplateFragment}
-${BlogPreviewFragment}
+            		#This is the fragment used for the blog preview on archive pages
+            		...TeasePostFragment
+        		}
+    		}
+  		}
+	}
+	# Here we make use of the imported fragments which are referenced above
+	${PostTemplateFragment}
+	${TeasePostFragment}
 `
 
 /**
@@ -87,17 +84,12 @@ const itemsPerPage = 10;
  * @returns {Promise<void>}
  */
 
-module.exports = async ({
-	actions,
-	graphql
-}) => {
+module.exports = async ({ actions, graphql }) => {
 	/**
 	 * This is the method from Gatsby that we're going
 	 * to use to create pages in our static site.
 	 */
-	const {
-		createPage
-	} = actions;
+	const { createPage } = actions;
 
 	const fetchPosts = async variables => {
 		/**

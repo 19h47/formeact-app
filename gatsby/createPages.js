@@ -2,43 +2,44 @@ const { PageTemplateFragment } = require(`../src/templates/page/data.js`);
 
 const pageTemplate = require.resolve(`../src/templates/page/Page.js`);
 const frontPageTemplate = require.resolve(`../src/templates/page/FrontPage.js`);
+const postsPageTemplate = require.resolve(`../src/templates/page/PostsPage.js`);
 
 const GET_PAGES = `
-  # Define our query variables
-  query GET_PAGES($first:Int $after:String) {
-    wpgraphql {
-      # Ask for pages
-      pages(
-          # Ask for the first XX number of pages
-          first: $first
+	# Define our query variables
+	query GET_PAGES($first:Int $after:String) {
+		wpgraphql {
+			# Ask for pages
+			pages(
+				# Ask for the first XX number of pages
+				first: $first
 
-          # A Cursor to where in the dataset our query should start
-          # and get items _after_ that point
-          after:$after
-      ) {
-          # In response, we'll want pageInfo so we know if we need
-          # to fetch more pages or not.
-          pageInfo {
-              # If true, we need to ask for more data.
-              hasNextPage
+				# A Cursor to where in the dataset our query should start and
+				# get items _after_ that point
+				after:$after
+      		) {
+          		# In response, we'll want pageInfo so we know if we need to
+				# fetch more pages or not.
+          		pageInfo {
+              		# If true, we need to ask for more data.
+              		hasNextPage
 
-              # This cursor will be used for the value for $after
-              # if we need to ask for more data
-              endCursor
-          }
-          nodes {
-              uri
-			  pageOnFront
+              		# This cursor will be used for the value for $after if we
+					# need to ask for more data
+              		endCursor
+          		}
+          		nodes {
+              		uri
+		  			pageOnFront
+		  			pageForPosts
 
-              # This is the fragment used for the pages Template
-              ...PageTemplateFragment
-
-          }
-      }
-    }
-  }
-  # Here we make use of the imported fragments which are referenced above
-  ${PageTemplateFragment}
+              		# This is the fragment used for the pages Template
+              		...PageTemplateFragment
+          		}
+      		}
+    	}
+  	}
+  	# Here we make use of the imported fragments which are referenced above
+	${PageTemplateFragment}
 `
 
 /**
@@ -48,14 +49,14 @@ const GET_PAGES = `
  *
  * @type {Array}
  */
-const allPages = []
+const allPages = [];
 
 /**
  * We track the page number so we can output the page number to the console.
  *
  * @type {number}
  */
-let pageNumber = 0
+let pageNumber = 0;
 
 /**
  * This is the export which Gatbsy will use to process.
@@ -63,17 +64,12 @@ let pageNumber = 0
  * @param { actions, graphql }
  * @returns {Promise<void>}
  */
-module.exports = async ({
-	actions,
-	graphql
-}) => {
+module.exports = async ({ actions, graphql }) => {
 	/**
 	 * This is the method from Gatsby that we're going
 	 * to use to create pages in our static site.
 	 */
-	const {
-		createPage
-	} = actions
+	const { createPage } = actions;
 
 	/**
 	 * Fetch pages method. This accepts variables to alter
@@ -104,14 +100,12 @@ module.exports = async ({
 						},
 					},
 				},
-			} = data
+			} = data;
 
 			/**
 			 * Map over the pages for later creation
 			 */
-			nodes && nodes.map(pages => {
-					allPages.push(pages)
-				})
+			nodes && nodes.map(pages => allPages.push(pages));
 
 			/**
 			 * If there's another page, fetch more
@@ -131,7 +125,7 @@ module.exports = async ({
 			 * so we can create the necessary pages with
 			 * all the data on hand.
 			 */
-			return allPages
+			return allPages;
 		})
 	}
 
@@ -139,20 +133,26 @@ module.exports = async ({
 	 * Kick off our `fetchPages` method which will get us all
 	 * the pages we need to create individual pages.
 	 */
-	await fetchPages({
-		first: 10,
-		after: null
-	}).then(allPages => {
+	await fetchPages({ first: 10, after: null }).then(allPages => {
 		/**
 		 * Map over the allPages array to create the
 		 * single pages
 		 */
 		allPages && allPages.map(page => {
-			console.log(`create pages: ${page.uri}, ${page.pageOnFront ? `this is the page on front` : ''}`);
+			console.log(`create pages: ${page.uri}${page.pageOnFront ? `, this is the page on front` : ''}${page.pageForPosts ? `, this is the page for posts` : ''}`);
+			let component = pageTemplate;
+
+			if (page.pageOnFront) {
+				component = frontPageTemplate;
+			}
+
+			if (page.pageForPosts) {
+				component = postsPageTemplate;
+			}
 
 			createPage({
 				path: page.pageOnFront ? '/' : `/${page.uri}/`,
-				component: page.pageOnFront ? frontPageTemplate : pageTemplate,
+				component,
 				context: page,
 			})
 		})
