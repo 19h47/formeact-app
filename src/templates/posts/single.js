@@ -1,36 +1,6 @@
-import React from "react"
-import {
-	graphql
-} from "gatsby"
-import Layout from "../../components/Layout"
-
-const SinglePost = props => {
-	const { data: { wpgraphql: { post } } } = props;
-	const { id, postId, content } = post;
-
-	return (
-		<Layout>
-			<article
-				data-id={ id }
-				id ={`post-${postId}`}
-				className ={`post-${postId} post type-post status-publish format-standard hentry category-react tag-accessibility tag-gatsby entry`}
-			>
-				<header className="entry-header">
-					<div className = "entry-meta" / >
-					{ /* .meta-info */ }
-				</header>
-
-				<div className="entry-content" dangerouslySetInnerHTML={{ __html: content }}/>
-					{ /* .entry-content */ }
-
-					<footer className = "entry-footer" / >
-			</article>
-			{ /* #post-${ID} */ }
-		</Layout>
-	)
-}
-
-export default SinglePost
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from "../../components/Layout";
 
 export const pageQuery = graphql `
 	query GET_POST($id: ID!) {
@@ -45,23 +15,52 @@ export const pageQuery = graphql `
 					sourceUrl
 					title
 				}
-				author {
-					name
-					slug
-				}
-				tags {
-					nodes {
-						name
-						slug
-					}
-				}
-				categories {
-					nodes {
-						name
-						slug
-					}
-				}
 			}
 		}
 	}
 `
+
+
+const Hero = ({ data }) => {
+	const { title } = data;
+
+	return (
+		<div className="Hero">
+			<div className="Site-container">
+				<div className="row">
+					<div className="col-12">
+						<h1 className="Hero__title margin-bottom-0" dangerouslySetInnerHTML={{
+							__html: title
+						}} />
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+
+const SinglePost = props => {
+	const { data: { wpgraphql: { post } } } = props;
+	const { postId, content } = post;
+
+	return (
+		<Layout>
+			<Hero data={post} />
+			<article
+				id={`post-${postId}`}
+				className="Section"
+			>
+				<div className="Site-container">
+					<div className="row">
+						<div className="col-12">
+							<div className="entry-content" dangerouslySetInnerHTML={{ __html: content }}/>
+						</div>
+					</div>
+				</div>
+			</article>
+		</Layout>
+	)
+}
+
+export default SinglePost;

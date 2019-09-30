@@ -36,8 +36,8 @@
 			@extend .d-flex;
 
 			img {
-				@include size( #{ $base-line-height }px, #{ $base-line-height * 2 }px );
-				@extend %margin-0;
+				@include size( 9px, #{ $base-line-height * 2 }px );
+				@extend %margin-right-1;
 
 				object-fit: contain;
 				object-position: center;

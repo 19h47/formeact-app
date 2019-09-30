@@ -59,7 +59,7 @@ const Posts = ({ data }) => {
 							{null !== data.link && undefined !== data.link ? link(data.link) : ''}
 							</div>
 							<div className="col-3 d-flex align-items-center justify-content-center">
-							{null !== data.link && undefined !== data.link ? url(data.link, 'white') : ''}
+							{null !== data.link && undefined !== data.link ? url({ link: data.link, color: 'white', direction: 'right' }) : ''}
 							</div>
 						</footer>
 					</div>

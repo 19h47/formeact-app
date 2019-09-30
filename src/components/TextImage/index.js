@@ -2,11 +2,11 @@ import React from 'react';
 
 import { illustration, url, link } from '@components/utils';
 
-const TextImage = ({ data }) => {
+const TextImage = ({ data, 'layout-index': layoutIndex }) => {
 	const { title, background, content } = data;
 
 	return (
-		<section className={ `Text-image Section background-color-${background}` }>
+		<section id={layoutIndex} className={ `Text-image Section background-color-${background}` }>
 			<div className="Site-container">
 				<div className="row">
 					<div className="col-12 col-md-7">
@@ -28,7 +28,7 @@ const TextImage = ({ data }) => {
 						{null !== data.link && undefined !== data.link ? link(data.link) : ''}
 					</div>
 					<div className="col-1 d-flex align-items-center justify-content-center">
-						{null !== data.link && undefined !== data.link ? url(data.link) : ''}
+						{null !== data.link && undefined !== data.link ? url({ link: data.link, direction: 'right' }) : ''}
 					</div>
 				</footer>
 			</div>

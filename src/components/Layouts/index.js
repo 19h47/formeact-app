@@ -13,27 +13,27 @@ const Layouts = ({ data }) => {
 
 	data.map((layout, index) => {
 		if ('Tweets' === layout.name) {
-			layouts.push(<Tweets key={index} />);
+			layouts.push(<Tweets key={index} layout-index={index} />);
 		}
 
 		if ('List' === layout.name) {
-			layouts.push(<List data={layout} key={index} />);
+			layouts.push(<List data={layout} key={index} layout-index={index} />);
 		}
 
 		if ('MultiColumns' === layout.name) {
-			layouts.push(<MultiColumns data={layout} key={index} />);
+			layouts.push(<MultiColumns data={layout} key={index} layout-index={index} />);
 		}
 
 		if ('Text' === layout.name) {
-			layouts.push(<Text data={layout} key={index} />);
+			layouts.push(<Text data={layout} key={index} layout-index={index} />);
 		}
 
 		if ('TextImage' === layout.name) {
-			layouts.push(<TextImage data={layout} key={index} />);
+			layouts.push(<TextImage data={layout} key={index} layout-index={index} />);
 		}
 
 		if ('Posts' === layout.name) {
-			layouts.push(<Posts data={layout} key={index} />);
+			layouts.push(<Posts data={layout} key={index} layout-index={index} />);
 		}
 
 		return layouts;

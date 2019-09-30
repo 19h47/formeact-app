@@ -48,9 +48,20 @@
 
 		img {
 			@extend %margin-bottom-0;
-			@include size( #{ $base-line-height / 2 }px, 9px );
 
 			fill: the_color( blue, very-dark-02 );
+		}
+
+		&--right {
+			img {
+				@include size( 9px, #{ $base-line-height / 2 }px );
+			}
+		}
+
+		&--down {
+			img {
+				@include size( #{ $base-line-height / 2 }px, 9px );
+			}
 		}
 	}
 

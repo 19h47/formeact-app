@@ -19,7 +19,7 @@ const Hero = ({ data }) => (
 					{null !== data.link && undefined !== data.link ? link(data.link) : ''}
 				</div>
 				<div className="col-1 d-flex align-items-center justify-content-center">
-					{null !== data.link && undefined !== data.link ? url(data.link) : ''}
+					{null !== data.link && undefined !== data.link ? url({ link: data.link }) : ''}
 				</div>
 			</footer>
 		</div>

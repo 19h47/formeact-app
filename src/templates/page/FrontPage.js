@@ -7,6 +7,7 @@ import Seo from '@components/Seo';
 import Layouts from '@components/Layouts';
 import { illustration, link, url } from '@components/utils';
 
+
 const Hero = ({ data }) => {
 	const waveOrange = require('../../img/svg/wave-orange.svg');
 	const waveBlue = require('../../img/svg/wave-blue.svg');
@@ -51,7 +52,7 @@ const Hero = ({ data }) => {
 						{null !== data.link && undefined !== data.link ? link(data.link) : ''}
 					</div>
 					<div className="col-1 d-flex align-items-center justify-content-center">
-						{null !== data.link && undefined !== data.link ? url(data.link, 'white') : ''}
+						{null !== data.link && undefined !== data.link ? url({ link: data.link, color: 'white' }) : ''}
 					</div>
 				</footer>
 			</div>
