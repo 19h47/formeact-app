@@ -1,6 +1,5 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
-
 const wordPressUrl = require('./config').wordPressUrl;
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
 		title: 'Forméact',
 		description: 'Forméact site',
 		author: '@19h47',
-		wordPressUrl: 'http://api.formeact.fr',
+		wordPressUrl,
 	},
 	plugins: [{
 			resolve: 'gatsby-source-graphql',

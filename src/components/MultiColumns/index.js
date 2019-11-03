@@ -4,7 +4,7 @@ import React from 'react';
 const columns = (layout) => layout.map((column, index) => {
 	return (
 		<div className="col" key={index}>
-			<h3 className="Multi-columns__title" dangerouslySetInnerHTML={{ __html: column.title }} />
+			<h3 className="Multi-columns__title d-md-none" dangerouslySetInnerHTML={{ __html: column.title }} />
 			<div className="Multi-columns__column">
 				<p dangerouslySetInnerHTML={{ __html: column.content }} />
 			</div>
