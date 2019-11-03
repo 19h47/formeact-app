@@ -41,7 +41,7 @@ module.exports = {
         		short_name: 'Forméact',
 				start_url: '/',
 				background_color: '#110e66',
-				theme_color: '#ee662f',
+				theme_color: '#110e66',
 				display: 'standalone',
 				icon: 'src/img/png/favicon.png'
 			}
