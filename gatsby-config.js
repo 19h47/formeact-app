@@ -8,6 +8,7 @@ module.exports = {
 		description: 'Forméact site',
 		author: '@19h47',
 		wordPressUrl,
+		siteUrl: wordPressUrl,
 	},
 	plugins: [{
 		resolve: 'gatsby-source-graphql',
