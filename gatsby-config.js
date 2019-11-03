@@ -10,11 +10,11 @@ module.exports = {
 		wordPressUrl,
 	},
 	plugins: [{
-			resolve: 'gatsby-source-graphql',
+		resolve: 'gatsby-source-graphql',
 			options: {
 				typeName: 'WPGraphQL',
 				fieldName: 'wpgraphql',
-				url: `${wordPressUrl}/graphql`,
+				url: `${wordPressUrl}/graphql`
 			},
 		},
 		'gatsby-plugin-sass',
@@ -32,6 +32,12 @@ module.exports = {
 				alias: {
 					"@components": path.resolve(__dirname, 'src/components')
 				}
+			}
+		},
+		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				icon: 'src/img/png/favicon.png'
 			}
 		}
 	]

@@ -23,7 +23,7 @@
 		object-position: center;
 
 		@include media-breakpoint-up( md ) {
-			@include margin( bottom 0 );
+			@include margin( bottom #{ $base-line-height * 0.5 }px );
 		}
 	}
 
