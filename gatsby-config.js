@@ -37,9 +37,17 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
+				name: 'Forméact',
+        		short_name: 'Forméact',
+				start_url: '/',
+				background_color: '#110e66',
+				theme_color: '#ee662f',
+				display: 'standalone',
 				icon: 'src/img/png/favicon.png'
 			}
 		},
+		'gatsby-plugin-offline',
+		'gatsby-plugin-react-helmet',
 		{
 			resolve: `gatsby-plugin-google-analytics`,
       		options: {
