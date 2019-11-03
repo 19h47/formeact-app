@@ -11,7 +11,7 @@ export function title(title) {
 
 export function description(description) {
 	return (
-		<div className="col-7">
+		<div className="col-12 col-md-7">
 			<div className="Hero__description" dangerouslySetInnerHTML={{
 				__html: description
 			}} />

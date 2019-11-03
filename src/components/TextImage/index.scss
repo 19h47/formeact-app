@@ -1,5 +1,5 @@
 /**
- * Text
+ * Text image
  *
  */
 .Text-image {
@@ -7,19 +7,27 @@
 
 	color: the_color( blue, very-dark-01 );
 
+	// .Text-image__items
 	&__items {
 		@include margin( bottom #{ $base-line-height * 3.5 }px );
 	}
 
+	// .Text-image__title
 	&__title {
 		@extend %font-weight-bold;
 
 		font-size: $base-font-size-px * power( $scale-factor, 1 );
 	}
 
+	// .Text-image__content
 	&__content {
-		font-size: $base-font-size-px * power( $scale-factor, 2 );
-		line-height: #{ $base-line-height * 2 }px;
-		white-space: pre-line;
+		font-size: $base-font-size-px * power( $scale-factor, 1 );
+		line-height: #{ $base-line-height * 1 }px;
+
+		@include media-breakpoint-up( md ) {
+			font-size: $base-font-size-px * power( $scale-factor, 2 );
+			line-height: #{ $base-line-height * 2 }px;
+			white-space: pre-line;
+		}
 	}
 }

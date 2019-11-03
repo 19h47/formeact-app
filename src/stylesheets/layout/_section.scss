@@ -15,12 +15,16 @@
 	&__illustration {
 		@extend .d-inline-block;
 		@extend %vertical-align-middle;
-		@include margin( right auto bottom 0 left auto );
+		@include margin( right auto bottom #{ $base-line-height }px left auto );
 		@include size( 100% );
 
 		max-height: #{ $base-line-height * 9 }px;
 		object-fit: contain;
 		object-position: center;
+
+		@include media-breakpoint-up( md ) {
+			@include margin( bottom 0 );
+		}
 	}
 
 	&__items {
@@ -45,6 +49,7 @@
 
 		border: 2px solid the_color( gray, light );
 		border-radius: #{ $base-line-height }px;
+		min-width: #{ $base-line-height * 2 }px;
 
 		img {
 			@extend %margin-bottom-0;
@@ -66,8 +71,10 @@
 	}
 
 	&__horizontal-line {
+		@include margin( bottom #{ $base-line-height }px );
+
 		@include size( 100%, 2px );
-		@extend %margin-0;
+		@extend %margin-md-0;
 
 		background-color: the_color( gray, light );
 		border: none;

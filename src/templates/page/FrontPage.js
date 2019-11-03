@@ -18,7 +18,7 @@ const Hero = ({ data }) => {
 				<div className="Site-container h-100">
 					<div className="row h-100">
 						<div className="col-10 h-100">
-							<img className="" src={waveOrange} alt=""/>
+							<img src={waveOrange} alt="Forméact"/>
 						</div>
 					</div>
 				</div>
@@ -27,14 +27,14 @@ const Hero = ({ data }) => {
 				<div className="Site-container h-100">
 					<div className="row h-100">
 						<div className="col-9 h-100">
-							<img className="" src={waveBlue} alt=""/>
+							<img src={waveBlue} alt="Forméact"/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="Site-container">
-				<div className="row">
-					<div className="col-7">
+				<div className="row d-flex">
+					<div className="col-12 col-md-7">
 						<h1 className="Hero__title" dangerouslySetInnerHTML={{
 							__html: data.title.replace( '&', '<span class="color-orange-bright">&</span>' )
 						}} />
@@ -45,13 +45,13 @@ const Hero = ({ data }) => {
 					{null !== data.illustration ? illustration(data.illustration) : ''}
 				</div>
 				<footer className="row d-flex align-items-center">
-					<div className="col-7 d-flex align-items-center">
+					<div className="col-md-7 d-md-flex align-items-md-center">
 						<hr className="Hero__horizontal-line" />
 					</div>
-					<div className="col-3 offset-1 d-flex justify-content-center">
+					<div className="col-9 col-md-3 offset-md-1 d-flex justify-content-center">
 						{null !== data.link && undefined !== data.link ? link(data.link) : ''}
 					</div>
-					<div className="col-1 d-flex align-items-center justify-content-center">
+					<div className="col-3 col-md-1 d-flex align-items-center justify-content-center">
 						{null !== data.link && undefined !== data.link ? url({ link: data.link, color: 'white' }) : ''}
 					</div>
 				</footer>

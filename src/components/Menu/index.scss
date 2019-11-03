@@ -4,5 +4,5 @@
 .Menu-items {
     @include margin( top #{ $base-line-height }px );
     @extend %list-style-type-none, %padding-left-0, %font-weight-bold;
-    @extend .d-flex, .justify-content-between;
+    @extend .d-md-flex, .justify-content-md-between;
 }

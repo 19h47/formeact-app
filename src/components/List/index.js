@@ -45,12 +45,12 @@ const List = ({ data }) => {
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-7">
+					<div className="col-12 col-md-7">
 						<ul className="Section__items List__items">
 							{lists(data.lists, background)}
 						</ul>
 					</div>
-					<div className="col-3 offset-md-1 d-flex">
+					<div className="col-md-3 offset-md-1 d-none d-md-flex">
 						<img
 							className="Section__illustration"
 							src={image(illustration)}

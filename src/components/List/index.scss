@@ -25,9 +25,10 @@
 		}
 	}
 
+	//
 	&__item {
-		@extend .d-flex;
-		@extend %margin-bottom-0;
+		@extend .d-md-flex;
+		@extend %margin-bottom-3, %margin-bottom-md-0;
 		@include margin( top -1px );
 
 		border-top: 1px solid the_color( gray, light );
@@ -45,14 +46,20 @@
 		}
 
 		&__column:first-child {
-			@include padding( right $grid-gutter-width );
 
-			width: percentage( 216 / 727 );
+			@include media-breakpoint-up( md ) {
+				@include padding( right $grid-gutter-width );
+
+				width: percentage( 216 / 727 );
+			}
 		}
 
 		&__column:last-child {
-			@extend .flex-column;
-			width: percentage( 512 / 727 );
+			@extend .flex-md-column;
+
+			@include media-breakpoint-up( md ) {
+				width: percentage( 512 / 727 );
+			}
 		}
 
 		&__link {

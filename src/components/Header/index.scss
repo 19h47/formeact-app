@@ -3,8 +3,12 @@
  */
 .Site-header {
 	@extend %position-relative;
-    @include padding( top #{ $base-line-height * 4 }px );
+    @include padding( top #{ $base-line-height * 2 }px );
 
     color: the_color( blue, very-dark-01 );
 	z-index: 1;
+
+	@include media-breakpoint-up( md ) {
+		@include padding( top #{ $base-line-height * 4 }px );
+	}
 }

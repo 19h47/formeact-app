@@ -31,7 +31,7 @@ const Header = ({ context }) => (
 							<div className="col-12 col-md-6">
 								<Menu />
 							</div>
-							<div className="col-12 col-md-3 d-flex justify-content-end align-items-center">
+							<div className="col-12 col-md-3 d-flex justify-content-md-end align-items-center">
 								<Socials color={ context === 'Front-page' ? 'white': 'blue' } />
 							</div>
 						</div>

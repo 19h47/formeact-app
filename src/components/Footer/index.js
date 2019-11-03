@@ -55,13 +55,13 @@ const Footer = () => (
 			</div>
 			<hr className="Site-footer__horizontal-line" />
 			<div className="row">
-				<div className="col-6 d-flex align-items-center">
+				<div className="col-12 col-md-6 d-md-flex align-items-md-center">
 					<div className="Site-footer__copyright">
-						<Link className="margin-right-md-3" to="/mentions-legales">Mentions légales</Link>
+						<Link className="margin-right-md-3" to="/mentions-legales">Mentions légales</Link><br className="d-md-none"/>
 						Réalisé par <a href="http://inesa.fr" target="_blank" rel="noopener noreferrer">inesa</a> et <a href="http://19h47.fr" target="_blank" rel="noopener noreferrer">19h47</a>
 					</div>
 				</div>
-				<div className="col-6 d-flex justify-content-end">
+				<div className="col-12 col-md-6 d-md-flex justify-content-md-end">
 					<Socials color="white" />
 				</div>
 			</div>

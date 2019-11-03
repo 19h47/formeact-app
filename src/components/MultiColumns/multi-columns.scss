@@ -5,6 +5,14 @@
 .Multi-columns {
 	$this: &;
 
+	.col {
+		min-width: 100%;
+
+		@include media-breakpoint-up( md ) {
+			min-width: 0;
+		}
+	}
+
 	&.background-color-blue-very-soft {
 		color: the_color( white );
 	}
@@ -29,15 +37,17 @@
 	}
 
 	&__column {
-		height: 100%;
 		@include margin( bottom -2px );
+		height: 100%;
 
 		p {
 			white-space: pre-line;
 		}
 
-		border-bottom-width: 2px;
-		border-bottom-style: solid;
-		border-color: the_color( gray, light );
+		@include media-breakpoint-up( md ) {
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+			border-color: the_color( gray, light );
+		}
 	}
 }

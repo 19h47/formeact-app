@@ -14,21 +14,28 @@
     // .Site-footer__horizontal-line
     &__horizontal-line {
         @include margin(
-			top #{ ( $base-line-height * 2 ) - 1 }px
-			bottom #{ ( $base-line-height * 1.5 ) - 1 }px
+			top #{ ( $base-line-height * 1 ) - 1 }px
+			bottom #{ ( $base-line-height * 1 ) - 1 }px
 		);
         @include size( 100%, 2px );
 
         background-color: the_color( white );
         border: none;
+
+        @include media-breakpoint-up( md ) {
+            @include margin(
+    			top #{ ( $base-line-height * 2 ) - 1 }px
+    			bottom #{ ( $base-line-height * 1.5 ) - 1 }px
+    		);
+        }
     }
 
     // .Site-footer__copyright
     &__copyright {
+        @extend %margin-bottom-3, %margin-bottom-md-0;
+
         color: var( --gray-light );
-		font: {
-			size: 18px;
-		}
+		font-size: 18px;
 		line-height: #{ $base-line-height }px;
 
         a {

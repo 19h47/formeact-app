@@ -47,8 +47,8 @@ const Posts = ({ data }) => {
 					</div>
 
 
-					<div className="col-4 offset-1 margin-top-auto">
-						<div className="row">
+					<div className="col-12 col-md-4 offset-md-1 margin-top-md-auto">
+						<div className="row d-none d-md-flex">
 							<div className="col-9">
 								<img className="Section__illustration" src={image} alt={illustration} loading="lazy" />
 							</div>

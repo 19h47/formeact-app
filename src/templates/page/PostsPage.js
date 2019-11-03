@@ -36,7 +36,7 @@ const PostsPage = props => {
 			<div className="List Section background-color-blue-very-soft color-white">
 				<div className="Site-container">
 					<div className="row">
-						<div className="col-7">
+						<div className="col-12 col-md-7">
 							<StaticQuery
 								query={POSTS}
 								render={data => {
@@ -50,10 +50,10 @@ const PostsPage = props => {
 								}}
 							/>
 						</div>
-						<div className="col-3 offset-1 d-flex align-items-end justify-content-center">
+						<div className="col-9 col-md-3 offset-md-1 d-flex align-items-end justify-content-center">
 							<Link className="Section__link margin-bottom-2" to={createLocalLink('/contact/')}>Me contacter</Link>
 						</div>
-						<div className="col-1 d-flex align-items-end justify-content-center">
+						<div className="col-3 col-md-1 d-flex align-items-end justify-content-center">
 							<Link className="Section__url Section__url--right" to={createLocalLink('/contact/')}>
 								<img src={chevronRight} width="9px" height="14px" alt="" loading="lazy" />
 							</Link>

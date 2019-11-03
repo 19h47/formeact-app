@@ -16,7 +16,7 @@ export function illustration(illustration) {
 	}
 
 	return (
-		<div className="col-3 offset-md-1 align-items-end d-flex">
+		<div className="col-12 col-md-3 offset-md-1 align-items-md-end d-md-flex">
 			<img className="Section__illustration" src={image} alt={illustration} loading="lazy" />
 		</div>
 	)

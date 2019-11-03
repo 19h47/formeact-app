@@ -76,12 +76,12 @@ class Tweets extends Component {
 							<section className="Tweets Section">
 								<div className="Site-container">
 									<div className="row margin-bottom-3 d-flex align-items-end">
-										<div className="col-6">
+										<div className="col-12 col-md-6">
 											<h2 className="Section__title color-white margin-bottom-0">
 												Découvrir
 											</h2>
 										</div>
-										<div className="col-6 d-flex justify-content-end">
+										<div className="col-12 col-md-6 d-flex justify-content-md-end">
 											<a className="Tweets__link color-white" href={data.wpgraphql.generalSettings.twitter} target="_blank" rel="noopener noreferrer">Me suivre sur Twitter</a>
 										</div>
 									</div>

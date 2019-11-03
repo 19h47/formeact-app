@@ -2,18 +2,26 @@
  * Hero
  */
 .Hero {
-	@include padding( top #{ $base-line-height * 10.5 }px bottom #{ $base-line-height * 3.5 }px );
-	@include margin( top #{ $base-line-height * -6.5 }px );
+	@include padding( top #{ $base-line-height * 2 }px bottom #{ $base-line-height * 2 }px );
 	@extend %position-relative;
 
 	background-color: transparent;
 	color: the_color( blue, very-dark-02 );
 
 	@at-root .Front-page & {
+		@include margin( top #{ $base-line-height * -11.5 }px );
+		@include padding( top #{ $base-line-height * 15.5 }px bottom #{ $base-line-height * 3.5 }px );
+
 		background-color: the_color( blue, bright );
 		color: the_color( white );
 	}
 
+	@include media-breakpoint-up( md ) {
+		@include margin( top #{ $base-line-height * -6.5 }px );
+		@include padding( top #{ $base-line-height * 10.5 }px bottom #{ $base-line-height * 3.5 }px );
+	}
+
+	// .Hero__wave
 	&__wave {
 		@include absolute( top 0 right 0 bottom 0 left 0 );
 
@@ -44,10 +52,10 @@
 	// .Hero__description
 	&__description {
 		@extend %font-family-body;
-		@include margin( bottom #{ $base-line-height * 3 }px );
+		@include margin( bottom #{ $base-line-height }px );
 
-		font-size: $base-font-size-px * power( $scale-factor, 2 );
-		line-height: #{ $base-line-height * 2 }px;
+		font-size: $base-font-size-px * power( $scale-factor, 1 );
+		line-height: #{ $base-line-height * 1 }px;
 
 		@at-root .Front-page & {
 			@include margin( bottom #{ $base-line-height * 2 }px );
@@ -56,18 +64,26 @@
 			font-size: $base-font-size-px * power( $scale-factor, 1 );
 			line-height: #{ $base-line-height * 1 }px;
 		}
+
+		@include media-breakpoint-up( md ) {
+			@include margin( bottom #{ $base-line-height * 3 }px );
+		}
 	}
 
 	// .Hero__horizontal-line
 	&__horizontal-line {
         @include size( 100%, 2px );
-		@extend %margin-0;
+		@include margin( top -2px bottom #{ $base-line-height }px );
 
         background-color: the_color( gray, light );
         border: none;
 
 		@at-root .Front-page & {
 			background-color: the_color( gray, very-light );
+		}
+
+		@include media-breakpoint-up( md ) {
+			@include margin( bottom 0 );
 		}
     }
 }
