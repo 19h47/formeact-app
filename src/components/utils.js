@@ -1,6 +1,6 @@
 import React from 'react';
 import createLocalLink from '../utils';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 
 export function illustration(illustration) {
 	if (null === illustration || undefined === illustration) {
@@ -42,8 +42,8 @@ export function url(options) {
 	}
 
 	return (
-		<Link className={`Section__url Section__url--${ direction }`} to={createLocalLink(link.url)}>
+		<a className={`Section__url Section__url--${ direction }`} href={createLocalLink(link.url)}>
 			<img src={chevronDown} width="14.5px" height="9px" alt="" loading="lazy" />
-		</Link>
+		</a>
 	);
 };

@@ -1,5 +1,6 @@
 import config from '../../config';
 
+
 export default function createLocalLink(url) {
 	if (null === url) {
 		return null;
