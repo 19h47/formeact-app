@@ -17,7 +17,7 @@ const Socials = ({ color }) => (
 	<StaticQuery
 		query={SOCIALS}
 		render={data => {
-			const { wpgraphql: { generalSettings } } =data;
+			const { wpgraphql: { generalSettings } } = data;
 
             const twitterUrl = generalSettings.twitter;
             const linkedinUrl = generalSettings.linkedin;
@@ -30,19 +30,19 @@ const Socials = ({ color }) => (
 			return (
 				<ul className="Socials">
 					<li className="Socials__item">
-						<a href={`mailto:${emailPublic}`}>
+						<a href={`mailto:${emailPublic}`} aria-label="Email">
 							<img src={envelope} alt=""/>
 						</a>
 					</li>
 
 					<li className="Socials__item">
-						<a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+						<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
 							<img src={linkedin} alt=""/>
 						</a>
 					</li>
 
 					<li className="Socials__item">
-						<a href={twitterUrl} target="_blank" rel="noopener noreferrer">
+						<a href={twitterUrl} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
 							<img src={twitter} alt=""/>
 						</a>
 					</li>
