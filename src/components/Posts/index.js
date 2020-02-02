@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { link, url } from '@components/utils';
+import { renderLink, renderUrl } from '@components/utils';
 
 import TeasePost from '@components/TeasePost';
 
@@ -56,10 +56,10 @@ const Posts = ({ data }) => {
 
 						<footer className="row d-flex align-items-center">
 							<div className="col-9 d-flex justify-content-center">
-							{null !== data.link && undefined !== data.link ? link(data.link) : ''}
+							{null !== data.link && undefined !== data.link ? renderLink(data.link) : ''}
 							</div>
 							<div className="col-3 d-flex align-items-center justify-content-center">
-							{null !== data.link && undefined !== data.link ? url({ link: data.link, color: 'white', direction: 'right' }) : ''}
+							{null !== data.link && undefined !== data.link ? renderUrl({ url: data.link.url, color: 'white', direction: 'right' }) : ''}
 							</div>
 						</footer>
 					</div>

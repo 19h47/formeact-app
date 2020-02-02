@@ -151,7 +151,7 @@ module.exports = async ({ actions, graphql }) => {
 			}
 
 			createPage({
-				path: page.pageOnFront ? '/' : `/${page.uri}/`,
+				path: page.pageOnFront ? '/' : `/${page.uri}`,
 				component,
 				context: page,
 			})

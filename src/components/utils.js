@@ -23,26 +23,29 @@ export function illustration(illustration) {
 };
 
 
-export function link(link) {
-	if (null === link.title) {
-		return false;
-	}
+export const renderEmail = (email) => {
+	const { address, title } = email;
 
 	return (
-		<a className="Section__link" href={createLocalLink(link.url)}>{link.title || 'Découvrir' }</a>
+		<a className="Section__link" href={`mailto:${address}`} target="_blank" rel="noopener noreferrer">{title}</a>
+	);
+}
+
+
+export const renderLink = (link) => {
+	const { url, title } = link;
+
+	return (
+		<a className="Section__link" href={createLocalLink(url)}>{title || 'Découvrir' }</a>
 	);
 };
 
-export function url(options) {
-	const { link, color = 'blue-very-dark-01', direction = 'down' } = options;
+export const renderUrl = (options) => {
+	const { url, color = 'blue-very-dark-01', direction = 'down' } = options;
 	const chevronDown = require(`../img/svg/chevron${ direction ? `-${ direction }` : ''}${ color ? `-${ color }` : '' }.svg`);
 
-	if (null === link.url) {
-		return false;
-	}
-
 	return (
-		<a className={`Section__url Section__url--${ direction }`} href={createLocalLink(link.url)}>
+		<a className={`Section__url Section__url--${ direction }`} href={url}>
 			<img src={chevronDown} width="14.5px" height="9px" alt="" loading="lazy" />
 		</a>
 	);

@@ -11,6 +11,10 @@ const PageTemplateFragment = `fragment PageTemplateFragment on WPGraphQL_Page {
 				title
 				target
 			}
+			email {
+				address
+				title
+			}
 		}
 		layouts {
 			... on WPGraphQL_Page_Fields_Layouts_MultiColumns {

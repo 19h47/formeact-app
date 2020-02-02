@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { illustration, url, link } from '@components/utils';
+import { illustration, renderUrl, renderLink } from '@components/utils';
 
 const TextImage = ({ data, 'layout-index': layoutIndex }) => {
 	const { title, background, content } = data;
@@ -25,10 +25,10 @@ const TextImage = ({ data, 'layout-index': layoutIndex }) => {
 						<hr className="Section__horizontal-line" />
 					</div>
 					<div className="col-9 col-md-3 offset-md-1 d-flex justify-content-center">
-						{null !== data.link && undefined !== data.link ? link(data.link) : ''}
+						{null !== data.link && undefined !== data.link ? renderLink(data.link) : ''}
 					</div>
 					<div className="col-3 col-md-1 d-flex align-items-center justify-content-center">
-						{null !== data.link && undefined !== data.link ? url({ link: data.link, direction: 'right' }) : ''}
+						{null !== data.link && undefined !== data.link ? renderUrl({ url: data.link.url, direction: 'right' }) : ''}
 					</div>
 				</footer>
 			</div>

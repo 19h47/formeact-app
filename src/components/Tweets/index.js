@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import Flickity from 'react-flickity-component';
 
 import Tweet from '../Tweet';
 
@@ -40,7 +41,7 @@ class Tweets extends Component {
 		super(props);
 
 		if ('undefined' !== typeof window) {
-			const Flickity = require('react-flickity-component');
+			// const Flickity = require('react-flickity-component');
 
 			this.state.Flickity = Flickity;
 		}
