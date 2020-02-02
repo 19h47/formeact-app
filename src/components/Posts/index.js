@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { renderLink, renderUrl } from '@components/utils';
+import createLocalLink from '../../utils';
 
 import TeasePost from '@components/TeasePost';
 
@@ -59,7 +60,7 @@ const Posts = ({ data }) => {
 							{null !== data.link && undefined !== data.link ? renderLink(data.link) : ''}
 							</div>
 							<div className="col-3 d-flex align-items-center justify-content-center">
-							{null !== data.link && undefined !== data.link ? renderUrl({ url: data.link.url, color: 'white', direction: 'right' }) : ''}
+								{null !== data.link && undefined !== data.link ? renderUrl({ url: createLocalLink(data.link.url), color: 'white', direction: 'right' }) : ''}
 							</div>
 						</footer>
 					</div>
