@@ -35,7 +35,7 @@
 		"gatsby-plugin-sass": "^2.1.26",
 		"gatsby-plugin-sitemap": "^2.2.24",
 		"gatsby-source-graphql": "^2.1.28",
-		"moment": "^2.24.0",
+		"moment": "^2.29.2",
 		"prop-types": "^15.7.2",
 		"react-flickity-component": "^3.5.0",
 		"react-helmet": "^5.2.1"
